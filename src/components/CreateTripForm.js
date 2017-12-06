@@ -84,11 +84,13 @@ class CreateTripForm extends Component {
  handleDurationChange = (e, { value }) => this.setState({ duration: value })
  handleCommentsChange = (e, { value }) => this.setState({ comments: value })
 
+ // reset_state(){
+ //   this.state.reset()
+ // }
+
  handleSubmit = (e) => {
      e.preventDefault()
      const tripObj = {trip: {
-       driver_username: this.state.username,
-       driver_name: this.state.first_name + " " + this.state.last_name,
        start_location: this.state.start_location,
        start_time: this.state.start_month + " " + this.state.start_day + ", " + this.state.start_time + this.state.start_am_pm,
        end_location: this.state.end_location,
@@ -105,7 +107,11 @@ class CreateTripForm extends Component {
     //  tripObj.trip.owner_id = this.props.currentUser.id
      console.log(tripObj);
      this.props.createTrip(tripObj)
+
+    //  reset_state()
    }
+
+
 
   //  componentDidUpdate = () => {
   //    if (this.props.) {
@@ -117,33 +123,28 @@ class CreateTripForm extends Component {
    const { value } = this.state
    return (
      <Form onSubmit={this.handleSubmit}>
-      
+
       <Form.Group widths='equal'>
-        <Form.Select  label='Depart' options={location_options} placeholder='Depart From' onChange={this.handleStartLocationChange}/>
-        <Form.Select  label='Departure Month' options={month} placeholder='Select' onChange={this.handleStartMonthChange}/>
-        <Form.Select label='Day' options={day} placeholder='Select' onChange={this.handleStartDayChange}/>
-        <Form.Select  label='Time' options={time} placeholder='Select' onChange={this.handleStartTimeChange}/>
-        <Form.Select  label='am/pm' options={am_pm} placeholder='Select' onChange={this.handleStartAmPmChange}/>
+        <Form.Select  label='Depart' className="form-control" options={location_options} placeholder='Depart From' value={this.state.start_location} onChange={this.handleStartLocationChange}/>
+        <Form.Select  label='Departure Month' options={month} placeholder='Select' value={this.state.start_month} onChange={this.handleStartMonthChange}/>
+        <Form.Select label='Day' options={day} placeholder='Select' value={this.state.start_day} onChange={this.handleStartDayChange}/>
+        <Form.Select  label='Time' options={time} placeholder='Select' value={this.state.start_time} onChange={this.handleStartTimeChange}/>
+        <Form.Select  label='am/pm' options={am_pm} placeholder='Select' value={this.state.start_am_pm} onChange={this.handleStartAmPmChange}/>
        </Form.Group>
        <Form.Group widths='equal'>
-        <Form.Select  label='Destination' options={location_options} placeholder='Destination' onChange={this.handleEndLocationChange}/>
-        <Form.Select  label='Arrival Time' options={time} placeholder='Select' onChange={this.handleEndTimeChange}/>
-        <Form.Select  label='am/pm' options={am_pm} placeholder='Select' onChange={this.handleEndAmPmChange}/>
-       </Form.Group>
-       <Form.Group inline>
-          <label>Willing to make stops along the way?</label>
-          <Form.Radio label='Yes' value='true' checked={value === 'true'} onChange={this.handleChange} />
-          <Form.Radio label='No' value='false' checked={value === 'false'} onChange={this.handleChange} />
-        </Form.Group>
-       <Form.Group widths='equal'>
-        <Form.Input  label='Car Make/Model' placeholder='' onChange={this.handleCarChange}/>
+        <Form.Select  label='Destination' options={location_options} placeholder='Destination' value={this.state.end_location} onChange={this.handleEndLocationChange}/>
+        <Form.Select  label='Arrival Time' options={time} placeholder='Select' value={this.state.end_time} onChange={this.handleEndTimeChange}/>
+        <Form.Select  label='am/pm' options={am_pm} placeholder='Select' value={this.state.end_am_pm} onChange={this.handleEndAmPmChange}/>
        </Form.Group>
        <Form.Group widths='equal'>
-        <Form.Input  label='Seats Available' placeholder='' onChange={this.handleAvailSeatsChange}/>
-        <Form.Input  label='Seat Price' placeholder='$' onChange={this.handleAvailSeatPriceChange}/>
-        <Form.Input  label='Estimated length of trip' placeholder='in hours' onChange={this.handleDurationChange}/>
+        <Form.Input  label='Car Make/Model' placeholder='' value={this.state.car} onChange={this.handleCarChange}/>
        </Form.Group>
-       <Form.TextArea  label='Comments' placeholder='Anything else your riders should know? Music preferences, will you make stops...' onChange={this.handleCommentsChange}/>
+       <Form.Group widths='equal'>
+        <Form.Input  label='Seats Available' placeholder='' value={this.state.available_seats} onChange={this.handleAvailSeatsChange}/>
+        <Form.Input  label='Seat Price' placeholder='$' value={this.state.seat_price} onChange={this.handleAvailSeatPriceChange}/>
+        <Form.Input  label='Estimated length of trip' value={this.state.duration} placeholder='in hours' onChange={this.handleDurationChange}/>
+       </Form.Group>
+       <Form.TextArea  label='Comments' placeholder='Anything else your riders should know? Music preferences, will you make stops...' value={this.state.comments} onChange={this.handleCommentsChange}/>
        <Form.Button>Submit</Form.Button>
      </Form>
    )

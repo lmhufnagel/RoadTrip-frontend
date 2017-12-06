@@ -35,6 +35,15 @@ export function reserveSeat(tripObj) {
   }
 }
 
+export function cancelSeat(tripObj) {
+  return function(dispatch) {
+    BackendAPI.cancelSeat(tripObj)
+      .then(json => {
+        dispatch({type: "CANCEL_SEAT", payload: json})
+      })
+  }
+}
+
 export function selectTrip(trip) {
   return {
     type: "SELECT_TRIP",

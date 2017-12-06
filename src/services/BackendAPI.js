@@ -44,6 +44,22 @@ export default class BackendAPI {
       .then(data => console.log(data))
   }
 
+  static cancelSeat (seatObj){
+    console.log(seatObj)
+    const url = `${BASE_URL}seats`
+    const myInit = {
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        method: "PATCH",
+        body: JSON.stringify(seatObj)
+    }
+    return fetch(url, myInit)
+      .then(res => res.json())
+      .then(data => console.log(data))
+  }
+
 
 }
 
