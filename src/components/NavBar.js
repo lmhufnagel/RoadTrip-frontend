@@ -38,6 +38,11 @@ class NavBar extends Component {
             </Link>
           </Menu.Item>
 
+          <Menu.Item>
+          <Link to="/view">
+          <h3>Your Trips</h3>
+          </Link>
+          </Menu.Item>
 
         </Menu>
       </div>
@@ -46,11 +51,3 @@ class NavBar extends Component {
 }
 
 export default NavBar
-
-
-
-// <Menu.Item>
-// <Link to="/view">
-// <h3>Your Trips</h3>
-// </Link>
-// </Menu.Item>

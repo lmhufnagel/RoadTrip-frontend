@@ -4,7 +4,8 @@ const BASE_URL = "http://localhost:3000/"
 export default class BackendAPI {
 
   static fetchUsers() {
-    return fetch(BASE_URL)
+    const url = `${BASE_URL}/users`
+    return fetch(url)
       .then(res => res.json())
   }
 

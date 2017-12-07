@@ -17,7 +17,8 @@ export default function tripReducer(
     driver: {},
     passengers:[],
     selectedRide: {},
-    trip: {}
+    trip: {},
+    users: []
   },
   action
 ) {
@@ -35,8 +36,9 @@ export default function tripReducer(
     case "ADD_PASSENGERS":
       return Object.assign({}, state, {riders: [...state.passengers, action.payload]})
     case "LOADING":
-      console.log("Loading")
       return {...state}
+    case "FETCH_USERS":
+      return { ...state, users: [...action.payload] }
     default:
       return state;
   }

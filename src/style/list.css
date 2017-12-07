@@ -5,3 +5,7 @@
 .rides {
   margin: 10px
 }
+
+.seats {
+  background: linear-gradient(to bottom right, #00ffcc, #00bfff)
+}
