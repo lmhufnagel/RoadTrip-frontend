@@ -11,10 +11,10 @@ class NavBar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Nav">
         <Menu>
 
-          <Menu.Item>
+          <Menu.Item >
             <Link to="/">
               <h3>Road Trip</h3>
             </Link>
@@ -38,11 +38,6 @@ class NavBar extends Component {
             </Link>
           </Menu.Item>
 
-          <Menu.Item>
-            <Link to="/view">
-              <h3>Your Trips</h3>
-            </Link>
-          </Menu.Item>
 
         </Menu>
       </div>
@@ -51,3 +46,11 @@ class NavBar extends Component {
 }
 
 export default NavBar
+
+
+
+// <Menu.Item>
+// <Link to="/view">
+// <h3>Your Trips</h3>
+// </Link>
+// </Menu.Item>

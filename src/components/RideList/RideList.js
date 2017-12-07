@@ -3,7 +3,7 @@ import RideCard from './RideCard.js'
 import { Card, Form } from 'semantic-ui-react'
 import { fetchRides } from "./../../actions/trips"
 import { connect } from "react-redux";
-
+import '../../style/list.css'
 
 class RideList extends Component {
 
@@ -14,7 +14,7 @@ class RideList extends Component {
 
       const rideCards = this.props.rides.map((ride, index) => {
         return (
-          <div>
+          <div className= 'rides'>
           <RideCard key={index} {...ride}/>
 
           </div>

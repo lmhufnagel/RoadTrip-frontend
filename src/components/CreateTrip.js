@@ -3,12 +3,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Container, Header } from 'semantic-ui-react'
 import CreateTripForm  from "./CreateTripForm"
+import '../style/form.css'
 
 class CreateTripContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className='CreateTripForm'>
         <br/><br/>
         <Container>
           <Header as="h1" textAlign='center'>Have a car? Going somewhere? Add a trip!</Header>

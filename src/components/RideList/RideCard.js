@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Card, Icon, Image, Button } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { reserveSeat } from "../../actions/trips"
-
+import '../../style/list.css'
 
 class TripCard extends Component {
   // handleClick = () => {
@@ -30,7 +30,7 @@ class TripCard extends Component {
   createTripCards = () => {
     return this.props.rides.map(t => {
       return (
-        <Card>
+        <Card >
           <Card.Content>
             <Card.Header onClick={this.handleClick}>
 
@@ -47,7 +47,6 @@ class TripCard extends Component {
             <Card.Description>{t.seat_price}</Card.Description>
             <Card.Description>{t.car}</Card.Description>
             <Card.Description>{t.comments}</Card.Description>
-            <Card.Description>{t.id}</Card.Description>
           </Card.Content>
         </Card>
       )
@@ -55,11 +54,10 @@ class TripCard extends Component {
   }
 
   render() {
-    // console.log("Card State", this.state);
-    console.log("card", this.props);
+
 
     return (
-      <Card fluid >
+      <Card className='RideCard' fluid>
         <Card.Content extra>
           <Card.Header>
           Driver: {this.props.driver.username}
@@ -70,7 +68,7 @@ class TripCard extends Component {
           <Card.Description>Car: {this.props.car}</Card.Description>
           <Card.Description>Rating: {this.props.rating}</Card.Description>
           <Card.Description>About this trip: {this.props.comments}</Card.Description>
-          <Card.Description>Trip ID: {this.props.id}</Card.Description>
+
           <div className='reserve button'>
             <Button basic color='green' onClick={this.handleReserve}>Reserve a seat! </Button>
           </div>

@@ -6,4 +6,7 @@ body {
 }
 
 
-/*End landing page custom CSS*/
+
+#App{
+background: linear-gradient(to bottom right, red, yellow);
+}

@@ -3,6 +3,8 @@ import { fetchUsers } from '../actions/users'
 import { fetchRides } from '../actions/trips'
 import { connect } from 'react-redux'
 import { Input, Button, Header, Image } from 'semantic-ui-react'
+import '../style/home.css'
+import RoadTripHome from './RoadTripHome.img'
 // import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -27,12 +29,14 @@ class Home extends Component {
   render() {
     console.log("HOME", this.props);
     return (
-      <div className="home">
-        <Image src='https://d2fzf9bbqh0om5.cloudfront.net/images/5388/original/make_your_road_trip_an_epic_adventure.jpg?1431399237' fluid/>
+      <div className="homeimg">
+        <Image src={RoadTripHome} fluid/>
       </div>
     )
   }
 }
+
+//https://d2fzf9bbqh0om5.cloudfront.net/images/5388/original/make_your_road_trip_an_epic_adventure.jpg?1431399237
 
 const mapDispatchToProps = {
     fetchUsers, fetchRides

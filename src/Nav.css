@@ -1,0 +1,55 @@
+div.Nav {
+  position: absolute;
+  top: 0;
+  width: 97%;
+  height: 60px;
+  margin: auto;
+}
+
+div.Nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+div.Nav li {
+  /*position: fixed;*/
+  float: right;
+  /*margin-right: 0px;*/
+  display: block;
+  padding-top: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  color: black
+}
+
+div.Nav li:hover {
+  display: block;
+  color: pink;
+  cursor: pointer
+}
+
+div.Nav li a {
+  display: block;
+  padding-right: 10px;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  color: black
+}
+
+div.Nav li a:hover {
+  display: block;
+  color: pink
+}
+
+div.Nav h1 {
+  float: left;
+  padding-left: 10px;
+  margin-top: 7px;
+}

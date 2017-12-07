@@ -4,6 +4,7 @@ import RideCard from ".././components/RideList/RideCard";
 import { Grid, Form, Button, Select } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { fetchRides, reserveSeat, selectRide, searchStart, searchEnd, setFilteredRides, setLastRideFiltered } from "../actions/trips";
+import '../style/list.css'
 
 const location_options = [
   { key: 'any', text: 'any', value: '' },
@@ -57,7 +58,7 @@ class RideContainer extends Component {
 
 
     return (
-      <div>
+      <div className='RideList'>
         <Form.Group widths='equal'>
 
           <Form.Field>

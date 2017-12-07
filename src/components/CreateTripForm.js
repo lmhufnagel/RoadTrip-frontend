@@ -60,8 +60,8 @@ class CreateTripForm extends Component {
     end_am_pm: "",
     stops: false,
     car: "",
-    available_seats: 0,
-    seat_price: 0,
+    available_seats: "",
+    seat_price: "",
     duration: "",
     comments: ""
   }
@@ -84,9 +84,7 @@ class CreateTripForm extends Component {
  handleDurationChange = (e, { value }) => this.setState({ duration: value })
  handleCommentsChange = (e, { value }) => this.setState({ comments: value })
 
- // reset_state(){
- //   this.state.reset()
- // }
+
 
  handleSubmit = (e) => {
      e.preventDefault()
@@ -108,7 +106,25 @@ class CreateTripForm extends Component {
      console.log(tripObj);
      this.props.createTrip(tripObj)
 
-    //  reset_state()
+     this.setState({
+       username: "",
+       first_name: "",
+       last_name: "",
+       start_location: "",
+       start_month: "",
+       start_day: "",
+       start_time: "",
+       start_am_pm: "",
+       end_location: "",
+       end_time: "",
+       end_am_pm: "",
+       stops: false,
+       car: "",
+       available_seats: "",
+       seat_price: "",
+       duration: "",
+       comments: ""
+     })
    }
 
 
@@ -140,12 +156,12 @@ class CreateTripForm extends Component {
         <Form.Input  label='Car Make/Model' placeholder='' value={this.state.car} onChange={this.handleCarChange}/>
        </Form.Group>
        <Form.Group widths='equal'>
-        <Form.Input  label='Seats Available' placeholder='' value={this.state.available_seats} onChange={this.handleAvailSeatsChange}/>
+        <Form.Input  label='Seats Available' placeholder='#' value={this.state.available_seats} onChange={this.handleAvailSeatsChange}/>
         <Form.Input  label='Seat Price' placeholder='$' value={this.state.seat_price} onChange={this.handleAvailSeatPriceChange}/>
         <Form.Input  label='Estimated length of trip' value={this.state.duration} placeholder='in hours' onChange={this.handleDurationChange}/>
        </Form.Group>
        <Form.TextArea  label='Comments' placeholder='Anything else your riders should know? Music preferences, will you make stops...' value={this.state.comments} onChange={this.handleCommentsChange}/>
-       <Form.Button>Submit</Form.Button>
+       <Form.Button color='violet'>Submit</Form.Button>
      </Form>
    )
  }

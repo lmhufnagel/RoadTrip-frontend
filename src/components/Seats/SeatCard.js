@@ -1,23 +1,24 @@
-import React, { Component } from "react";
-import { Card, Icon, Image, Button } from "semantic-ui-react";
-import { connect } from "react-redux";
-import { cancelSeat } from "../../actions/trips"
+// import React, { Component } from "react";
+// import { Card, Icon, Image, Button } from "semantic-ui-react";
+// import { connect } from "react-redux";
+// import { cancelSeat } from "../../actions/trips"
+//
+//
+//
+// class SeatCard extends Component {
 
-
-
-class SeatCard extends Component {
-
-  handleCancelSeat = () => {
-    console.log("clicked!", this.props.id)
-    const seatObj = {seat: {
-      available: true,
-      ride_id: this.props.id,
-      rider_id: null
-    }}
-    this.props.reserveSeat(seatObj)
-  }
-
+  // handleCancelSeat = () => {
+  //   console.log("clicked!", this.props.id)
+  //   const seatObj = {seat: {
+  //     available: true,
+  //     ride_id: this.props.id,
+  //     rider_id: null
+  //   }}
+  //   this.props.reserveSeat(seatObj)
+  // }
+  //
   // createTripCards = () => {
+  //
   //
   //     render() {
   //
@@ -39,28 +40,28 @@ class SeatCard extends Component {
   //               <Button basic color='green' onClick={this.handleCancelSeat}>Reserve a seat! </Button>
   //             </div>
   //         </Card.Content>
-  //         </Card>
-  //       )
+  // //         </Card>
+  // //       )
   //     }
   //   }
-  }
-
-
-    function mapStateToProps(state) {
-      return {
-        trips: state.trips
-      };
-    }
-
-    function mapDispatchToProps(dispatch) {
-      return {
-        // onSelect: trip => {
-        //   dispatch(selectTriptrip));
-        // },
-        cancelSeat: trip => {
-          dispatch(cancelSeat(trip));
-        }
-      };
-    }
-
-    export default connect(mapStateToProps, mapDispatchToProps)(SeatCard)
+  // }
+  //
+  //
+  //   function mapStateToProps(state) {
+  //     return {
+  //       trips: state.trips
+  //     };
+  //   }
+  //
+  //   function mapDispatchToProps(dispatch) {
+  //     return {
+  //       // onSelect: trip => {
+  //       //   dispatch(selectTriptrip));
+  //       // },
+  //       cancelSeat: trip => {
+  //         dispatch(cancelSeat(trip));
+  //       }
+  // //     };
+  // //   }
+  //
+  //   export default connect(mapStateToProps, mapDispatchToProps)(SeatCard)
