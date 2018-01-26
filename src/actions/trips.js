@@ -35,6 +35,18 @@ export function reserveSeat(tripObj) {
   }
 }
 
+export function fetchReservedSeats() {
+  return function(dispatch) {
+    console.log("FETCHING RESERVED_SEATS");
+    dispatch({type: "LOADING_RESERVED_SEATS"})
+    BackendAPI.fetchReservedSeats()
+      .then(json => {
+        dispatch({type: "FETCH_RESERVED_SEATS", payload: json})
+      }
+    )
+  }
+}
+
 export function cancelSeat(tripObj) {
   return function(dispatch) {
     BackendAPI.cancelSeat(tripObj)

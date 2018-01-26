@@ -62,7 +62,7 @@ class RideContainer extends Component {
         <Form.Group widths='equal'>
 
           <Form.Field>
-            <label htmlFor="origin" className="start_location">Search by Origin</label>
+            <label htmlFor="origin" className="start_location">Search by Origin:</label>
             <Select
               name="origin"
               id="origin"
@@ -71,9 +71,8 @@ class RideContainer extends Component {
               placeholder='Select'
               options={location_options}
               />
-            </Form.Field>
-            <Form.Field>
-              <label htmlFor="destination" className="end_location">Search by Destination</label>
+
+              <label htmlFor="destination" className="end_location">&nbsp;&nbsp;Search by Destination:</label>
               <Select
                 name="destination"
                 id="destination"
