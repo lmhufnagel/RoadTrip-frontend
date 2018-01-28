@@ -1,5 +1,3 @@
-
-
 import BackendAPI from '../services/BackendAPI.js'
 
 
@@ -87,16 +85,3 @@ export function setLastRideFiltered(filteredRides){
     payload: filteredRides
   }
 }
-
-
-//write reserveSeat function
-
-// export function filterTrips(start_location, end_location, trips) {
-//   return function(dispatch) {
-//     const sortedTrips = Trips.filter((trip) => {
-//
-//       return trip.start_location.toLowerCase() === end_location.toLowerCase() && trip.end_location.toLowerCase() === end_location.toLowerCase()
-//     })
-//     dispatch(setCurrentTrips(sortedTrips))
-//   }
-// }
