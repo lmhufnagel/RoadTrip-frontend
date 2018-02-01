@@ -4,23 +4,20 @@ import SeatCard from ".././components/Seats/SeatCard";
 import { Grid, Form, Button, Select } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { fetchRides } from "../actions/trips";
+import '../style/list.css'
 
-class RideContainer extends Component {
+class SeatContainer extends Component {
   state = {
-    searchedRides: [],
-    searchTerm: '',
-    selectedRide: [],
-    origin_option: "",
-    destination_option: ""
+    reservedSeats: []
   }
 
   componentDidMount() {
-    this.props.fetchRides()
+    this.props.fetchReservedSeats()
   }
 
   render(){
     return(
-      
+      <SeatList className='RideList' rides={reservedSeats}/>
     )
   }
 
@@ -28,20 +25,16 @@ class RideContainer extends Component {
     console.log(state);
     return {
       rides: state.rides,
-      filteredRides: this.filteredRides,
-      lastRideFiltered:this.lastRideFiltered
+      reservedSeats: state.reservedSeats
     };
   }
 
   function mapDispatchToProps(dispatch) {
     return {
-      fetchRides: (rides) => dispatch(fetchRides(rides))
+      fetchReservedSeats: (seats) => dispatch(fetchReservedSeats(seats))
       }
-      searchStart,
-      setLastRideFiltered,
-      setFilteredRides
   }
 
 
 
-  export default connect(mapStateToProps, mapDispatchToProps)(RideContainer);
+  export default connect(mapStateToProps, mapDispatchToProps)(SeatContainer);

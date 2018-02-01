@@ -1,5 +1,3 @@
-
-
 import BackendAPI from '../services/BackendAPI.js'
 
 
@@ -32,6 +30,18 @@ export function reserveSeat(tripObj) {
       .then(json => {
         dispatch({type: "RESERVE_SEAT", payload: json})
       })
+  }
+}
+
+export function fetchReservedSeats() {
+  return function(dispatch) {
+    console.log("FETCHING RESERVED_SEATS");
+    dispatch({type: "LOADING_RESERVED_SEATS"})
+    BackendAPI.fetchReservedSeats()
+      .then(json => {
+        dispatch({type: "FETCH_RESERVED_SEATS", payload: json})
+      }
+    )
   }
 }
 
@@ -75,16 +85,3 @@ export function setLastRideFiltered(filteredRides){
     payload: filteredRides
   }
 }
-
-
-//write reserveSeat function
-
-// export function filterTrips(start_location, end_location, trips) {
-//   return function(dispatch) {
-//     const sortedTrips = Trips.filter((trip) => {
-//
-//       return trip.start_location.toLowerCase() === end_location.toLowerCase() && trip.end_location.toLowerCase() === end_location.toLowerCase()
-//     })
-//     dispatch(setCurrentTrips(sortedTrips))
-//   }
-// }

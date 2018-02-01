@@ -1,7 +1,11 @@
 .RideList {
-  background: linear-gradient(to bottom right, #00ffcc, #00bfff)
+  background: linear-gradient(to bottom right, #4a7d99, #cc7a00)
 }
 
 .rides {
   margin: 10px
+}
+
+.seats {
+  background: linear-gradient(to bottom right, #4a7d99, #cc7a00)
 }
