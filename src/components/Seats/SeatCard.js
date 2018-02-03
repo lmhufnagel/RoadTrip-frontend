@@ -7,15 +7,15 @@ import { cancelSeat } from "../../actions/trips"
 
 class SeatCard extends Component {
 
-  // handleCancelSeat = () => {
-  //   console.log("clicked!", this.props.id)
-  //   const seatObj = {seat: {
-  //     available: true,
-  //     ride_id: this.props.id,
-  //     rider_id: null
-  //   }}
-  //   this.props.cancelSeat(seatObj)
-  // }
+  handleCancelSeat = () => {
+    console.log("clicked!", this.props.id)
+    const seatObj = {seat: {
+      available: true,
+      ride_id: this.props.id,
+      rider_id: null
+    }}
+    this.props.cancelSeat(seatObj)
+  }
 
     render() {
 
@@ -47,14 +47,12 @@ class SeatCard extends Component {
     }
 
   }
-  // function mapDispatchToProps(dispatch) {
-  //   return {
-  //     cancelSeat: trip => {
-  //       dispatch(cancelSeat(trip));
-  //     }
-  //   };
-  // }
-  //
-  // export default connect(null, mapDispatchToProps)(SeatCard)
+  function mapDispatchToProps(dispatch) {
+    return {
+      cancelSeat: trip => {
+        dispatch(cancelSeat(trip));
+      }
+    };
+  }
 
-export default SeatCard
+  export default connect(null, mapDispatchToProps)(SeatCard)
