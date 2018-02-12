@@ -31,6 +31,10 @@ class Home extends Component {
     return (
       <div className="homeimg">
         <Image src={RoadTripHome} fluid/>
+        <div className="login">
+          //add button for login - route to login page
+        <div className="Signup"
+            //add button for Signup - route to new user page 
       </div>
     )
   }
