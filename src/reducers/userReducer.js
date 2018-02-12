@@ -17,6 +17,12 @@ export function userReducer(state = {currentUser: {}}, action) {
     case "ADD_TRIP":
       return {...state, currentUser: {...state.currentUser, trips: [...state.currentUser.trips, action.payload]}}
 
+    case "DELETE_TRIP":
+      const newTrips = state.currentUser.trips.filter(app => {
+        return app.id !== action.payload
+      })
+      return {...state, currentUser: {...state.currentUser, trips: [...newTrips]}}
+
     default:
       return {...state}
   }
