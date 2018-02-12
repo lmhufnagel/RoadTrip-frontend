@@ -23,6 +23,9 @@ export function userReducer(state = {currentUser: {}}, action) {
       })
       return {...state, currentUser: {...state.currentUser, trips: [...newTrips]}}
 
+    case "SET_DEMO_USER":
+      return {...state, currentUser: action.payload}
+
     default:
       return {...state}
   }
