@@ -29,8 +29,16 @@ class SeatCard extends Component {
               <div>Leaving: {this.props.trip.start_location} => {this.props.trip.start_time}</div>
               </Card.Header>
               <Card.Meta>
-
                 <div>Arriving in: {this.props.trip.end_location} => {this.props.trip.end_time}</div>
+              </Card.Meta>
+              <Card.Meta>
+                <div>Driver: {this.props.trip.driver} </div>
+              </Card.Meta>
+              <Card.Meta>
+                <div>Rating: {this.props.trip.driver} </div>
+              </Card.Meta>
+              <Card.Meta>
+                <div>Other Passengers: {this.props.trip.passengers} </div>
               </Card.Meta>
               <Card.Description>
               </Card.Description>
@@ -38,7 +46,7 @@ class SeatCard extends Component {
             <Card.Content extra>
               <div className='ui two buttons'>
 
-                <Button basic color='red'>Cancel</Button>
+                <Button color='red'>Cancel</Button>
               </div>
             </Card.Content>
           </Card>
