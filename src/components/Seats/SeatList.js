@@ -34,9 +34,6 @@ class SeatList extends Component {
       )
     }
 
-
-
-
   }
 
 
