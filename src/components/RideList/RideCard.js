@@ -58,6 +58,7 @@ class TripCard extends Component {
 
     return (
       <Card className='RideCard' fluid>
+
         <Card.Content extra>
           <Card.Header>
           Driver: {this.props.driver.username}
@@ -73,6 +74,7 @@ class TripCard extends Component {
             <Button basic color='green' onClick={this.handleReserve}>Reserve a seat! </Button>
           </div>
       </Card.Content>
+
       </Card>
     )
   }
