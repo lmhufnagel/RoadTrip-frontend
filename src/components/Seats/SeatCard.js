@@ -22,8 +22,8 @@ class SeatCard extends Component {
       console.log("card", this.props);
       return (
         <div>
-        <Card.Group>
-          <Card fluid>
+        <Card.Group itemsPerRow={2}>
+          <Card >
             <Card.Content>
               <Card.Header>
               <div>Leaving: {this.props.trip.start_location} => {this.props.trip.start_time}</div>
