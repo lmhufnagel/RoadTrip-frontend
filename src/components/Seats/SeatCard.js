@@ -19,7 +19,7 @@ class SeatCard extends Component {
 
   handleOnClick = () => {
     this.props.store.dispatch({
-      type: 'DELETE_SEAT'
+      type: 'CANCEL_SEAT'
     });
   }
 
@@ -56,7 +56,9 @@ class SeatCard extends Component {
             <Card.Content extra>
               <div className='ui two buttons'>
 
-                <Button color='red'>Cancel</Button>
+                <Button color='red' onClick={() => this.handleOnClick()}>
+                  Cancel
+                </Button>
               </div>
             </Card.Content>
           </Card>
