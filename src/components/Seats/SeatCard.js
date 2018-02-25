@@ -17,7 +17,17 @@ class SeatCard extends Component {
     this.props.cancelSeat(seatObj)
   }
 
+  handleOnClick = () => {
+    this.props.store.dispatch({
+      type: 'DELETE_SEAT'
+    });
+  }
+
     render() {
+
+      // const todos = this.props.store.getState().todos.map((todo, index) => {
+      //       return <Todo text={todo.text} key={index} store={this.props.store}
+      //     })
 
       console.log("card", this.props);
       return (
