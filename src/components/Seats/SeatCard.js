@@ -56,7 +56,7 @@ class SeatCard extends Component {
             <Card.Content extra>
               <div className='ui two buttons'>
 
-                <Button color='red' onClick={() => this.handleOnClick()}>
+                <Button color='red'>
                   Cancel
                 </Button>
               </div>
