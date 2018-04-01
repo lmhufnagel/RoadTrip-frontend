@@ -42,6 +42,9 @@ class SeatCard extends Component {
                 <div>Arriving in: {this.props.trip.end_location} => {this.props.trip.end_time}</div>
               </Card.Meta>
               <Card.Meta>
+                <div>Cost: {this.props.trip.seat_price} </div>
+              </Card.Meta>
+              <Card.Meta>
                 <div>Driver: {this.props.trip.driver} </div>
               </Card.Meta>
               <Card.Meta>
