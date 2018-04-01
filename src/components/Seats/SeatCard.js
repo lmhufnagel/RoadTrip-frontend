@@ -23,6 +23,10 @@ class SeatCard extends Component {
     });
   }
 
+  deleteSeat(event) {
+    this.props.actions.deleteSeat(this.state.seat)
+  }
+
     render() {
 
       // const todos = this.props.store.getState().todos.map((todo, index) => {
@@ -59,7 +63,7 @@ class SeatCard extends Component {
             <Card.Content extra>
               <div className='ui two buttons'>
 
-                <Button color='red'>
+                <Button onClick={this.deleteSeat} color='red'>
                   Cancel
                 </Button>
               </div>
