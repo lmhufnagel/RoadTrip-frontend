@@ -65,7 +65,20 @@ export default class BackendAPI {
     const request = new Request(`http://localhost:3000/seats/${seat.id}`, {
       method: 'DELETE'
     })
+    export function deleteSeatSuccess(seat) {
+      return {type: types.DELETE_CAT_SUCCESS, seat}
+    }
 
+    export function deleteSeat(seat) {
+      return function(dispatch) {
+        return seatApi.deleteSeat(seat).then(() => {
+          console.log(`Deleted ${seat.id}`)
+          dispatch(deleteSeatSuccess(seat));
+          return;
+        }).catch(error => {
+          throw(error);
+        })
+      }
 
 }
 
