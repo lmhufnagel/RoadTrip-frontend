@@ -61,6 +61,11 @@ export default class BackendAPI {
       .then(data => console.log(data))
   }
 
+  static deleteSeat(seat) {
+    const request = new Request(`http://localhost:3000/seats/${seat.id}`, {
+      method: 'DELETE'
+    })
+
 
 }
 
