@@ -66,6 +66,7 @@ class TripCard extends Component {
           <Card.Description> Origin: {this.props.start_location} => Departure Time: {this.props.start_time}</Card.Description>
           <Card.Description>Destination: {this.props.end_location} => Estimated Arrival Time: {this.props.end_time}</Card.Description>
           <Card.Description>Available Seats: {this.props.available_seats}</Card.Description>
+          <Card.Description>Cost per seat: {this.props.seat_price}</Card.Description>
           <Card.Description>Car: {this.props.car}</Card.Description>
           <Card.Description>Rating: {this.props.rating}</Card.Description>
           <Card.Description>About this trip: {this.props.comments}</Card.Description>
